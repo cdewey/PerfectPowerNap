@@ -3,6 +3,8 @@
 
     <string name="app_name">PerfectPowerNap</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="title">Perfect Power Nap</string>
+    <string name="power_nap">Power Nap</string>
+    <string name="timed_nap">Timed Nap</string>
 
 </resources>
