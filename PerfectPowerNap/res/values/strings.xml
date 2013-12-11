@@ -7,7 +7,14 @@
     <string name="power_nap">Power Nap</string>
     <string name="timed_nap">Timed Nap</string>
     <string name="title_activity_set_up">SetUp</string>
-    <string name="welcome">Welcome to Perfect Power Nap</string>
+    <string name="welcome">Welcome to Perfect Power Nap Setup</string>
     <string name="sleep_time">Roughly how long does it take you to fall asleep for a nap?</string>
 	<string name="done">Done</string>
+	<string name="nap_length">Nap Length</string>
+	<string name="ten">10 mins. (If fall asleep slowly)</string>
+	<string name="fifteen">15 mins. (Recommended)</string>
+	<string name="twenty">20 mins. (If fall asleep quickly)</string>
+	<string name="alert_sound">Alert Sound</string>
+	<string name="alert_name">Siren (Default)</string>
+
 </resources>

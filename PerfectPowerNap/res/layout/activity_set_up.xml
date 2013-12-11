@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="@string/welcome"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="italic"/>
     
 	<LinearLayout 
@@ -43,7 +43,67 @@
 	        android:layout_weight=".25"/> 
 	    
 	</LinearLayout>
+	
+    <TextView
+        android:id="@+id/napLengthText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sleepTime"
+        android:text="@string/nap_length"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:layout_gravity="center_vertical"/>
+		    
+	<RadioGroup
+		        android:id="@+id/napLength"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@id/napLengthText">
+		 
+		        <RadioButton
+		            android:id="@+id/lenTen"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:textColor="#FFFFFF"
+		            android:text="@string/ten"/>
+		 
+		        <RadioButton
+		            android:id="@+id/lenFifteen"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:textColor="#FFFFFF"
+		            android:text="@string/fifteen"
+		            android:checked="true"/>
+		        
+		        <RadioButton
+		            android:id="@+id/lenTwenty"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:textColor="#FFFFFF"
+		            android:text="@string/twenty" />
+		 
+		    </RadioGroup>
+		    
+    <TextView
+        android:id="@+id/alertSoundText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/napLength"
+        android:paddingTop="30dp"
+        android:text="@string/alert_sound"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:layout_gravity="center_vertical"/>
     
+    <Button
+        android:id="@+id/alertSoundButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alertSoundText"
+        android:text="@string/alert_name"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_gravity="center_vertical"/>
         
     
     <Button
@@ -52,4 +112,5 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="@string/done" />
+    
 </RelativeLayout>

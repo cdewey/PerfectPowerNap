@@ -12,21 +12,16 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		SharedPreferences runCheck = getSharedPreferences("hasRunBefore", 0); //load the preferences
+		SharedPreferences runCheck = getSharedPreferences("powerNapSettings", 0); //load the preferences
 		Boolean hasRun = runCheck.getBoolean("hasRun", false); //see if it's run before, default no
 		if (!hasRun) {
-		    SharedPreferences settings = getSharedPreferences("hasRunBefore", 0);
+		    SharedPreferences settings = getSharedPreferences("powerNapSettings", 0);
 		    SharedPreferences.Editor edit = settings.edit();
 		    edit.putBoolean("hasRun", true); //set to has run
 		    edit.commit(); //apply
-		    //code for if this is the first time the app has run
 		    Intent intent = new Intent(this,SetUp.class);
-			startActivityForResult(intent,0);
+			startActivity(intent);
 		}
-		/*if (Appconfig.activity == false) {
-			 Intent intent = new Intent(this,SetUp.class);
-			 startActivityForResult(intent,0);
-		}*/
 		setContentView(R.layout.activity_main);
 	}
 
