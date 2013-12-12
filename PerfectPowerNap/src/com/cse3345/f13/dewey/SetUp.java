@@ -103,11 +103,13 @@ public class SetUp extends Activity {
 		    }
 		}
 		
+		int offset = 0;
 		
 		SharedPreferences settings = getSharedPreferences("powerNapSettings", 0); //load the preferences
 		SharedPreferences.Editor edit = settings.edit();
 	    edit.putInt("fallAsleepTime", fallAsleepTime);
 	    edit.putInt("napLength", napLength);
+	    edit.putInt("offset", offset);
 	    edit.putString("alertTone", ringTonePath);
 	    edit.commit(); //apply
 	    finish();
