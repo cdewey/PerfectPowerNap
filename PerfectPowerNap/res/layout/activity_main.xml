@@ -17,22 +17,107 @@
         android:textSize="28sp"
         android:textStyle="bold" />
     
-    <Button
-        android:id="@+id/powerNapButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/appTitle"
-        android:text="@string/power_nap" 
-        />
+    <View
+    android:id="@+id/titlePowerLine"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@android:color/darker_gray"
+    android:layout_below="@id/appTitle"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"/>
     
     <Button
-        android:id="@+id/timedNapButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/powerNapButton"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/powerNapButton"
-        android:text="@string/timed_nap" 
-        />
+        android:layout_below="@id/titlePowerLine"
+        android:text="@string/power_nap"
+        android:textSize="32sp"
+        android:textStyle="bold"  />
+    
+    <View
+    android:id="@+id/powerTimedLine"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@android:color/darker_gray"
+    android:layout_below="@id/powerNapButton"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"/>
+    
+    <LinearLayout 
+	    android:id="@+id/timedNap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/powerTimedLine">
+        
+        <NumberPicker
+	        android:id="@+id/sleepTimePicker"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:textColor="#FFFFFF"
+	        android:layout_weight=".25"
+	        /> 
+	       
+		<Button
+	        android:id="@+id/timedNapButton"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:text="@string/timed_nap"
+	        android:layout_weight=".75"
+	        android:layout_gravity="center_vertical"/>   	
+	    
+	</LinearLayout>
+	
+    <View
+    android:id="@+id/timeTipLine"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@android:color/darker_gray"
+    android:layout_below="@id/timedNap"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp" />
+    
+    <TextView
+	        android:id="@+id/tip"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/tip"
+	        android:textSize="24sp"
+	        android:textStyle="bold"
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@id/timeTipLine" />
+    
+    <LinearLayout 
+       android:id="@+id/tips"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_below="@id/tip">
+       
+        
+        <TextView
+	        android:id="@+id/tip1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/tip1"
+	        android:textSize="17sp"/>
+        <TextView
+	        android:id="@+id/tip2"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/tip2"
+	        android:textSize="17sp"/>
+        <TextView
+	        android:id="@+id/tip3"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/tip3"
+	        android:textSize="17sp"/>
+       
+	    
+	</LinearLayout>
+    
 
 </RelativeLayout>

@@ -41,21 +41,25 @@ public class Nap extends Activity {
 		if(id == R.id.ocean){
 			rl.setBackgroundResource(R.drawable.ocean);
 			mediaPlayer=MediaPlayer.create(this,R.raw.ocean);
+			mediaPlayer.setLooping(true);
             mediaPlayer.start();
 		}
 		else if(id == R.id.fire){
 			rl.setBackgroundResource(R.drawable.fire);
 			mediaPlayer=MediaPlayer.create(this,R.raw.fire);
+			mediaPlayer.setLooping(true);
             mediaPlayer.start();
 		}
 		else if(id == R.id.thunder){
 			rl.setBackgroundResource(R.drawable.lightning);
 			mediaPlayer=MediaPlayer.create(this,R.raw.thunder);
+			mediaPlayer.setLooping(true);
             mediaPlayer.start();
 		}
 		else if(id == R.id.birds){
 			rl.setBackgroundResource(R.drawable.bird);
 			mediaPlayer=MediaPlayer.create(this,R.raw.birds);
+			mediaPlayer.setLooping(true);
             mediaPlayer.start();
 		}
 		else if(id == R.id.none){
@@ -76,6 +80,7 @@ public class Nap extends Activity {
 	    	   mediaPlayer.pause();
 	       }
 	       super.onPause();
+	       finish();
 	   }
 	@Override
 	   public void onDestroy() {

@@ -26,8 +26,12 @@
     <string name="none">None</string>
     <string name="title_activity_wake_up">WakeUp</string>
     <string name="stop">STOP</string>
-	<string name="question_text">Did you wake up from this nap feeling tired or alert?</string>
+	<string name="question_text">Did you wake up from this nap feeling tired?</string>
 	<string name="submit">Submit</string>
 	<string name="yes">Yes</string>
 	<string name="no">No</string>
+	<string name="tip">Tips</string>
+	<string name="tip1">#1 Drink caffine right before your nap</string>
+	<string name="tip2">#2 Find a quiet spot for your nap</string>
+	<string name="tip3">#3 Get up as soon as the alarm goes off</string>
 </resources>

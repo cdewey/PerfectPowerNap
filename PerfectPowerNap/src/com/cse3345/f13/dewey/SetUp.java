@@ -77,9 +77,9 @@ public class SetUp extends Activity {
 	
 	public void saveSettings(View view){
 		NumberPicker np = (NumberPicker) findViewById(R.id.sleepTimePicker);
-		int fallAsleepTime = np.getValue();
+		long fallAsleepTime = np.getValue();
 		
-		int napLength = 0;
+		long napLength = 0;
 		RadioGroup rg = (RadioGroup) findViewById(R.id.napLength);
 		if(rg.getCheckedRadioButtonId()!=-1){
 		    int id= rg.getCheckedRadioButtonId();
@@ -97,13 +97,13 @@ public class SetUp extends Activity {
 		    }
 		}
 		
-		int offset = 0;
+		long offset = 0;
 		
 		SharedPreferences settings = getSharedPreferences("powerNapSettings", 0); //load the preferences
 		SharedPreferences.Editor edit = settings.edit();
-	    edit.putInt("fallAsleepTime", fallAsleepTime);
-	    edit.putInt("napLength", napLength);
-	    edit.putInt("offset", offset);
+	    edit.putLong("fallAsleepTime", fallAsleepTime*60000);
+	    edit.putLong("napLength", napLength*60000);
+	    edit.putLong("offset", offset*60000);
 	    edit.putString("alertTone", ringTonePath);
 	    edit.commit(); //apply
 	    finish();
