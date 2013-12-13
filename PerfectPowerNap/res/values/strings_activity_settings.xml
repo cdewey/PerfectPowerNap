@@ -20,6 +20,6 @@
     </string-array>
     
     <string name="alarm">Alarm Sound</string>
-    <string name="alarm_info">Select what sound you want to use for you alarm</string>
+    <string name="alarm_info">Select what sound you want to use for your alarm</string>
 
 </resources>
