@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.Menu;
@@ -55,6 +57,15 @@ public class MainActivity extends Activity {
 		am = (AlarmManager)(this.getSystemService( Context.ALARM_SERVICE ));
 		am.set( AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + 10000, pi );
 		
+		Context context = getApplicationContext();
+		CharSequence napStart = "Your nap has started";
+		int duration = Toast.LENGTH_SHORT;
+		Toast toast = Toast.makeText(context, napStart, duration);
+		toast.show();
+		
+		Intent intent = new Intent(this,Nap.class);
+		intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+		startActivity(intent);
     }
 	
 	public int calculateAlarmLength(){
@@ -70,15 +81,21 @@ public class MainActivity extends Activity {
 	      br = new BroadcastReceiver() {
 	             @Override
 	             public void onReceive(Context c, Intent i) {
-	                    Toast.makeText(c, "Rise and Shine!", Toast.LENGTH_LONG).show();
-	                    }
-	             };
-	      registerReceiver(br, new IntentFilter("com.cse3345.f13.dewey") );
-	      pi = PendingIntent.getBroadcast( this, 0, new Intent("com.cse3345.f13.dewey"),0 );
+	            	openAlarmScreen();
+	            	
+                }
+          };
+	      registerReceiver(br, new IntentFilter("com.cse3345.f13.dewey"));
+	      Intent intent = new Intent("com.cse3345.f13.dewey");
+	      pi = PendingIntent.getBroadcast(this, 0, intent,0 );
 	      am = (AlarmManager)(this.getSystemService( Context.ALARM_SERVICE ));
 	}
 
-
+	
+	public void openAlarmScreen(){
+		 Intent intent = new Intent(this,WakeUp.class);
+		 startActivity(intent);
+	}
 	@Override
 	protected void onDestroy() {
 	       am.cancel(pi);

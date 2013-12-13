@@ -49,12 +49,6 @@ public class SetUp extends Activity {
 		
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.set_up, menu);
-		return true;
-	}
 	
 	public void selectAlertSound(View view){
 		Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);

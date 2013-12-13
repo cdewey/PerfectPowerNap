@@ -55,34 +55,34 @@
         android:layout_gravity="center_vertical"/>
 		    
 	<RadioGroup
-		        android:id="@+id/napLength"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_below="@id/napLengthText">
+        android:id="@+id/napLength"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/napLengthText">
+ 
+        <RadioButton
+            android:id="@+id/lenTen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="@string/ten"/>
+ 
+        <RadioButton
+            android:id="@+id/lenFifteen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="@string/fifteen"
+            android:checked="true"/>
+        
+        <RadioButton
+            android:id="@+id/lenTwenty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="@string/twenty" />
 		 
-		        <RadioButton
-		            android:id="@+id/lenTen"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:textColor="#FFFFFF"
-		            android:text="@string/ten"/>
-		 
-		        <RadioButton
-		            android:id="@+id/lenFifteen"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:textColor="#FFFFFF"
-		            android:text="@string/fifteen"
-		            android:checked="true"/>
-		        
-		        <RadioButton
-		            android:id="@+id/lenTwenty"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:textColor="#FFFFFF"
-		            android:text="@string/twenty" />
-		 
-		    </RadioGroup>
+    </RadioGroup>
 		    
     <TextView
         android:id="@+id/alertSoundText"

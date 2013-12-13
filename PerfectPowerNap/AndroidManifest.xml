@@ -26,6 +26,15 @@
             android:name="com.cse3345.f13.dewey.SetUp"
             android:label="@string/title_activity_set_up" >
         </activity>
+        <activity
+            android:name="com.cse3345.f13.dewey.Nap"
+            android:label="@string/title_activity_nap"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name="com.cse3345.f13.dewey.WakeUp"
+            android:label="@string/title_activity_wake_up" >
+        </activity>
     </application>
 
 </manifest>
