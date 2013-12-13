@@ -143,6 +143,8 @@ public class MainActivity extends Activity {
 	    edit.putBoolean("napStarted", false);
 	    edit.commit(); //apply
 		
+	    am.cancel(pi);
+	    
 		Context context = getApplicationContext();
 		CharSequence napStart = "Nap Ended";
 		int duration = Toast.LENGTH_SHORT;
