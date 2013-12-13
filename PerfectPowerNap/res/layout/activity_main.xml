@@ -121,10 +121,20 @@
 	
     <Button
         android:id="@+id/endNap"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:text="@string/end_nap"
+        android:textSize="20sp"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/returnNap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/return_nap"
         android:textSize="20sp"
         android:visibility="invisible"/>
     

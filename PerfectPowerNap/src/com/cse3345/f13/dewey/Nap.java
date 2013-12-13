@@ -38,24 +38,36 @@ public class Nap extends Activity {
 		RelativeLayout rl = (RelativeLayout) findViewById(R.id.background);
 		mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 		if(id == R.id.ocean){
+			if (mediaPlayer != null){
+		    	   mediaPlayer.stop();
+		    }
 			rl.setBackgroundResource(R.drawable.ocean);
 			mediaPlayer=MediaPlayer.create(this,R.raw.ocean);
 			mediaPlayer.setLooping(true);
             mediaPlayer.start();
 		}
 		else if(id == R.id.fire){
+			if (mediaPlayer != null){
+		    	   mediaPlayer.stop();
+		    }
 			rl.setBackgroundResource(R.drawable.fire);
 			mediaPlayer=MediaPlayer.create(this,R.raw.fire);
 			mediaPlayer.setLooping(true);
             mediaPlayer.start();
 		}
 		else if(id == R.id.thunder){
+			if (mediaPlayer != null){
+		    	   mediaPlayer.stop();
+		    }
 			rl.setBackgroundResource(R.drawable.lightning);
 			mediaPlayer=MediaPlayer.create(this,R.raw.thunder);
 			mediaPlayer.setLooping(true);
             mediaPlayer.start();
 		}
 		else if(id == R.id.birds){
+			if (mediaPlayer != null){
+		    	   mediaPlayer.stop();
+		    }
 			rl.setBackgroundResource(R.drawable.bird);
 			mediaPlayer=MediaPlayer.create(this,R.raw.birds);
 			mediaPlayer.setLooping(true);

@@ -48,15 +48,15 @@ public class WakeUp extends Activity {
 	}
 	
 	public void endAlarm(){
-		mediaPlayer.stop();
-		RelativeLayout info = (RelativeLayout) findViewById(R.id.background);
-		info.setVisibility(info.VISIBLE);
-		
 		SharedPreferences settings = getSharedPreferences("powerNapSettings", 0); //load the preferences
 		SharedPreferences.Editor edit = settings.edit();
 	    edit.putBoolean("alramFinished", true);
 	    edit.putBoolean("napStarted", false);
 	    edit.commit(); //apply
+	    
+		mediaPlayer.stop();
+		RelativeLayout info = (RelativeLayout) findViewById(R.id.background);
+		info.setVisibility(info.VISIBLE);
 	}
 	
 	public void startAlarm(){
@@ -95,4 +95,13 @@ public class WakeUp extends Activity {
 	    super.onBackPressed();
 	    finish();
 	}
+	
+	@Override
+	   public void onDestroy() {
+		    
+	       if (mediaPlayer != null){
+	    	   mediaPlayer.release();
+	       }
+	       super.onDestroy();
+	   }
 }

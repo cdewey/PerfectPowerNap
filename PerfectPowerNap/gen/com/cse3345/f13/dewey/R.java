@@ -33,35 +33,36 @@ public final class R {
         public static final int stop=0x7f020005;
     }
     public static final class id {
-        public static final int action_settings=0x7f0b0027;
-        public static final int alertSoundButton=0x7f0b001f;
-        public static final int alertSoundText=0x7f0b001e;
+        public static final int action_settings=0x7f0b0028;
+        public static final int alertSoundButton=0x7f0b0020;
+        public static final int alertSoundText=0x7f0b001f;
         public static final int appTitle=0x7f0b0000;
-        public static final int background=0x7f0b000e;
-        public static final int birds=0x7f0b0014;
-        public static final int dev=0x7f0b0028;
-        public static final int doneButton=0x7f0b0020;
+        public static final int background=0x7f0b000f;
+        public static final int birds=0x7f0b0015;
+        public static final int dev=0x7f0b0029;
+        public static final int doneButton=0x7f0b0021;
         public static final int endNap=0x7f0b000d;
-        public static final int fire=0x7f0b0012;
-        public static final int infoText=0x7f0b000f;
-        public static final int lenFifteen=0x7f0b001c;
-        public static final int lenTen=0x7f0b001b;
-        public static final int lenTwenty=0x7f0b001d;
-        public static final int napLength=0x7f0b001a;
-        public static final int napLengthText=0x7f0b0019;
-        public static final int no=0x7f0b0025;
-        public static final int none=0x7f0b0015;
-        public static final int ocean=0x7f0b0011;
+        public static final int fire=0x7f0b0013;
+        public static final int infoText=0x7f0b0010;
+        public static final int lenFifteen=0x7f0b001d;
+        public static final int lenTen=0x7f0b001c;
+        public static final int lenTwenty=0x7f0b001e;
+        public static final int napLength=0x7f0b001b;
+        public static final int napLengthText=0x7f0b001a;
+        public static final int no=0x7f0b0026;
+        public static final int none=0x7f0b0016;
+        public static final int ocean=0x7f0b0012;
         public static final int powerNapButton=0x7f0b0002;
         public static final int powerTimedLine=0x7f0b0003;
-        public static final int questionText=0x7f0b0022;
-        public static final int sleepTime=0x7f0b0017;
+        public static final int questionText=0x7f0b0023;
+        public static final int returnNap=0x7f0b000e;
+        public static final int sleepTime=0x7f0b0018;
         public static final int sleepTimePicker=0x7f0b0005;
-        public static final int sleepTimeText=0x7f0b0018;
-        public static final int soundChoice=0x7f0b0010;
-        public static final int stop=0x7f0b0021;
-        public static final int submit=0x7f0b0026;
-        public static final int thunder=0x7f0b0013;
+        public static final int sleepTimeText=0x7f0b0019;
+        public static final int soundChoice=0x7f0b0011;
+        public static final int stop=0x7f0b0022;
+        public static final int submit=0x7f0b0027;
+        public static final int thunder=0x7f0b0014;
         public static final int timeTipLine=0x7f0b0007;
         public static final int timedNap=0x7f0b0004;
         public static final int timedNapButton=0x7f0b0006;
@@ -71,9 +72,9 @@ public final class R {
         public static final int tip3=0x7f0b000c;
         public static final int tips=0x7f0b0009;
         public static final int titlePowerLine=0x7f0b0001;
-        public static final int welcomeText=0x7f0b0016;
-        public static final int yes=0x7f0b0024;
-        public static final int yesNO=0x7f0b0023;
+        public static final int welcomeText=0x7f0b0017;
+        public static final int yes=0x7f0b0025;
+        public static final int yesNO=0x7f0b0024;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -96,8 +97,8 @@ public final class R {
     }
     public static final class string {
         public static final int action_settings=0x7f070001;
-        public static final int alarm=0x7f070026;
-        public static final int alarm_info=0x7f070027;
+        public static final int alarm=0x7f070027;
+        public static final int alarm_info=0x7f070028;
         public static final int alert_name=0x7f07000e;
         public static final int alert_sound=0x7f07000d;
         public static final int app_name=0x7f070000;
@@ -107,16 +108,17 @@ public final class R {
         public static final int end_nap=0x7f070021;
         public static final int fifteen=0x7f07000b;
         public static final int fire=0x7f070013;
-        public static final int gen=0x7f070023;
+        public static final int gen=0x7f070024;
         public static final int info_text=0x7f070011;
-        public static final int nap_info=0x7f070025;
+        public static final int nap_info=0x7f070026;
         public static final int nap_length=0x7f070009;
-        public static final int nap_time=0x7f070024;
+        public static final int nap_time=0x7f070025;
         public static final int no=0x7f07001c;
         public static final int none=0x7f070016;
         public static final int ocean=0x7f070012;
         public static final int power_nap=0x7f070003;
         public static final int question_text=0x7f070019;
+        public static final int return_nap=0x7f070022;
         public static final int sleep_time=0x7f070007;
         public static final int stop=0x7f070018;
         public static final int submit=0x7f07001a;
@@ -130,7 +132,7 @@ public final class R {
         public static final int title=0x7f070002;
         public static final int title_activity_nap=0x7f070010;
         public static final int title_activity_set_up=0x7f070005;
-        public static final int title_activity_settings=0x7f070022;
+        public static final int title_activity_settings=0x7f070023;
         public static final int title_activity_wake_up=0x7f070017;
         public static final int twenty=0x7f07000c;
         public static final int welcome=0x7f070006;

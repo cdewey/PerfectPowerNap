@@ -61,6 +61,13 @@ public class MainActivity extends Activity {
             }
         });
 		
+		Button returnNap = (Button) findViewById(R.id.returnNap);
+		returnNap.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+            	returnNap();
+            }
+        });
+		
 		NumberPicker np = (NumberPicker) findViewById(R.id.sleepTimePicker);
 		np.setMaxValue(60);
 		np.setMinValue(1);
@@ -96,8 +103,8 @@ public class MainActivity extends Activity {
 		am = (AlarmManager)(this.getSystemService( Context.ALARM_SERVICE ));
 		
 		if(type == "power"){
-			long alarmLengthMin = calculateAlarmLength();
-			am.set( AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + 10000, pi );
+			long alarmLength = calculateAlarmLength();
+			am.set( AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + alarmLength, pi );
 		}
 		
 		else{
@@ -169,9 +176,16 @@ public class MainActivity extends Activity {
 		Button powerNapButton = (Button) findViewById(R.id.powerNapButton);
     	Button timedNapButton = (Button) findViewById(R.id.timedNapButton);
     	Button endNap = (Button) findViewById(R.id.endNap);
+    	Button returnNap = (Button) findViewById(R.id.returnNap);
     	powerNapButton.setEnabled(true);
     	timedNapButton.setEnabled(true);
     	endNap.setVisibility(endNap.INVISIBLE);
+    	returnNap.setVisibility(returnNap.INVISIBLE);
+	}
+	
+	public void returnNap(){
+		Intent intent = new Intent(this,Nap.class);
+		startActivity(intent);
 	}
 	@Override
 	   public void onResume() {
@@ -181,9 +195,11 @@ public class MainActivity extends Activity {
 		    	Button powerNapButton = (Button) findViewById(R.id.powerNapButton);
 		    	Button timedNapButton = (Button) findViewById(R.id.timedNapButton);
 		    	Button endNap = (Button) findViewById(R.id.endNap);
+		    	Button returnNap = (Button) findViewById(R.id.returnNap);
 		    	powerNapButton.setEnabled(false);
 		    	timedNapButton.setEnabled(false);
 		    	endNap.setVisibility(endNap.VISIBLE);
+		    	returnNap.setVisibility(returnNap.VISIBLE);
 		    }
 
 	       super.onResume();
