@@ -7,7 +7,9 @@
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="18" />
-	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -34,6 +36,10 @@
         <activity
             android:name="com.cse3345.f13.dewey.WakeUp"
             android:label="@string/title_activity_wake_up" >
+        </activity>
+        <activity
+            android:name="com.cse3345.f13.dewey.SettingsActivity"
+            android:label="@string/title_activity_settings" >
         </activity>
     </application>
 

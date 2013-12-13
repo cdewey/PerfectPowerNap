@@ -1,10 +1,10 @@
 package com.cse3345.f13.dewey;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -55,12 +55,16 @@ public class WakeUp extends Activity {
 		SharedPreferences settings = getSharedPreferences("powerNapSettings", 0); //load the preferences
 		SharedPreferences.Editor edit = settings.edit();
 	    edit.putBoolean("alramFinished", true);
+	    edit.putBoolean("napStarted", false);
 	    edit.commit(); //apply
 	}
 	
 	public void startAlarm(){
+		SharedPreferences settings = getSharedPreferences("powerNapSettings", 0);
+		String path = settings.getString("alertTone", "N/A");
+		Uri alarmUri = Uri.parse(path);
 		mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-		mediaPlayer=MediaPlayer.create(this,R.raw.siren_noise);
+		mediaPlayer=MediaPlayer.create(this,alarmUri);
 		mediaPlayer.setLooping(true);
         mediaPlayer.start();
 	}
@@ -76,16 +80,18 @@ public class WakeUp extends Activity {
 		    int index = rg.indexOfChild(radioButton);		    
 		    if (index == 0){
 		    	offset = offset + 30000;
+		    	SharedPreferences.Editor edit = settings.edit();
+			    edit.putLong("offset", offset);
+			    edit.commit(); //apply
 		    }
 		}
 		
-		SharedPreferences.Editor edit = settings.edit();
-	    edit.putLong("offset", offset);
-	    edit.commit(); //apply
+		
 	    finish();
 	}
 	
 	public void onBackPressed() {
+		endAlarm();
 	    super.onBackPressed();
 	    finish();
 	}

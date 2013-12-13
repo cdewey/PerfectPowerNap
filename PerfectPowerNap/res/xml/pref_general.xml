@@ -1,0 +1,19 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	
+    <ListPreference
+        android:defaultValue="15"
+        android:entries="@array/nap_times"
+        android:entryValues="@array/nap_values"
+        android:key="napLength"
+        android:title="@string/nap_time"
+        android:summary="@string/nap_info"/>
+    
+    
+    <RingtonePreference
+        android:key="notifications_new_message_ringtone"
+        android:ringtoneType="ringtone"
+        android:title="@string/alarm"
+        android:summary="@string/alarm_info"/>
+
+</PreferenceScreen>

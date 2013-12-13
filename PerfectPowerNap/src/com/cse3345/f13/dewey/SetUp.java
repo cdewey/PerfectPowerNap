@@ -55,7 +55,7 @@ public class SetUp extends Activity {
 		intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, "Select sound for alarm");
 		intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, false);
 		intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_DEFAULT, true);
-		intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE,RingtoneManager.TYPE_NOTIFICATION);
+		intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE,RingtoneManager.TYPE_RINGTONE);
 		startActivityForResult(intent,999);
     }
 	

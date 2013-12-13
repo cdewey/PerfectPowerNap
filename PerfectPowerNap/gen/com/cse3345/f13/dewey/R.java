@@ -8,6 +8,10 @@
 package com.cse3345.f13.dewey;
 
 public final class R {
+    public static final class array {
+        public static final int nap_times=0x7f080000;
+        public static final int nap_values=0x7f080001;
+    }
     public static final class attr {
     }
     public static final class dimen {
@@ -17,8 +21,8 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
         public static final int bird=0x7f020000;
@@ -29,47 +33,47 @@ public final class R {
         public static final int stop=0x7f020005;
     }
     public static final class id {
-        public static final int action_settings=0x7f090027;
-        public static final int alertSoundButton=0x7f09001f;
-        public static final int alertSoundText=0x7f09001e;
-        public static final int appTitle=0x7f090000;
-        public static final int background=0x7f09000e;
-        public static final int birds=0x7f090014;
-        public static final int dev=0x7f090028;
-        public static final int doneButton=0x7f090020;
-        public static final int endNap=0x7f09000d;
-        public static final int fire=0x7f090012;
-        public static final int infoText=0x7f09000f;
-        public static final int lenFifteen=0x7f09001c;
-        public static final int lenTen=0x7f09001b;
-        public static final int lenTwenty=0x7f09001d;
-        public static final int napLength=0x7f09001a;
-        public static final int napLengthText=0x7f090019;
-        public static final int no=0x7f090025;
-        public static final int none=0x7f090015;
-        public static final int ocean=0x7f090011;
-        public static final int powerNapButton=0x7f090002;
-        public static final int powerTimedLine=0x7f090003;
-        public static final int questionText=0x7f090022;
-        public static final int sleepTime=0x7f090017;
-        public static final int sleepTimePicker=0x7f090005;
-        public static final int sleepTimeText=0x7f090018;
-        public static final int soundChoice=0x7f090010;
-        public static final int stop=0x7f090021;
-        public static final int submit=0x7f090026;
-        public static final int thunder=0x7f090013;
-        public static final int timeTipLine=0x7f090007;
-        public static final int timedNap=0x7f090004;
-        public static final int timedNapButton=0x7f090006;
-        public static final int tip=0x7f090008;
-        public static final int tip1=0x7f09000a;
-        public static final int tip2=0x7f09000b;
-        public static final int tip3=0x7f09000c;
-        public static final int tips=0x7f090009;
-        public static final int titlePowerLine=0x7f090001;
-        public static final int welcomeText=0x7f090016;
-        public static final int yes=0x7f090024;
-        public static final int yesNO=0x7f090023;
+        public static final int action_settings=0x7f0b0027;
+        public static final int alertSoundButton=0x7f0b001f;
+        public static final int alertSoundText=0x7f0b001e;
+        public static final int appTitle=0x7f0b0000;
+        public static final int background=0x7f0b000e;
+        public static final int birds=0x7f0b0014;
+        public static final int dev=0x7f0b0028;
+        public static final int doneButton=0x7f0b0020;
+        public static final int endNap=0x7f0b000d;
+        public static final int fire=0x7f0b0012;
+        public static final int infoText=0x7f0b000f;
+        public static final int lenFifteen=0x7f0b001c;
+        public static final int lenTen=0x7f0b001b;
+        public static final int lenTwenty=0x7f0b001d;
+        public static final int napLength=0x7f0b001a;
+        public static final int napLengthText=0x7f0b0019;
+        public static final int no=0x7f0b0025;
+        public static final int none=0x7f0b0015;
+        public static final int ocean=0x7f0b0011;
+        public static final int powerNapButton=0x7f0b0002;
+        public static final int powerTimedLine=0x7f0b0003;
+        public static final int questionText=0x7f0b0022;
+        public static final int sleepTime=0x7f0b0017;
+        public static final int sleepTimePicker=0x7f0b0005;
+        public static final int sleepTimeText=0x7f0b0018;
+        public static final int soundChoice=0x7f0b0010;
+        public static final int stop=0x7f0b0021;
+        public static final int submit=0x7f0b0026;
+        public static final int thunder=0x7f0b0013;
+        public static final int timeTipLine=0x7f0b0007;
+        public static final int timedNap=0x7f0b0004;
+        public static final int timedNapButton=0x7f0b0006;
+        public static final int tip=0x7f0b0008;
+        public static final int tip1=0x7f0b000a;
+        public static final int tip2=0x7f0b000b;
+        public static final int tip3=0x7f0b000c;
+        public static final int tips=0x7f0b0009;
+        public static final int titlePowerLine=0x7f0b0001;
+        public static final int welcomeText=0x7f0b0016;
+        public static final int yes=0x7f0b0024;
+        public static final int yesNO=0x7f0b0023;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -78,53 +82,59 @@ public final class R {
         public static final int activity_wake_up=0x7f030003;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
-        public static final int nap=0x7f080001;
-        public static final int set_up=0x7f080002;
-        public static final int wake_up=0x7f080003;
+        public static final int main=0x7f0a0000;
+        public static final int nap=0x7f0a0001;
+        public static final int set_up=0x7f0a0002;
+        public static final int wake_up=0x7f0a0003;
     }
     public static final class raw {
-        public static final int birds=0x7f040000;
-        public static final int fire=0x7f040001;
-        public static final int ocean=0x7f040002;
-        public static final int siren_noise=0x7f040003;
-        public static final int thunder=0x7f040004;
+        public static final int birds=0x7f050000;
+        public static final int fire=0x7f050001;
+        public static final int ocean=0x7f050002;
+        public static final int siren_noise=0x7f050003;
+        public static final int thunder=0x7f050004;
     }
     public static final class string {
-        public static final int action_settings=0x7f060001;
-        public static final int alert_name=0x7f06000e;
-        public static final int alert_sound=0x7f06000d;
-        public static final int app_name=0x7f060000;
-        public static final int birds=0x7f060015;
-        public static final int dev=0x7f06000f;
-        public static final int done=0x7f060008;
-        public static final int end_nap=0x7f060021;
-        public static final int fifteen=0x7f06000b;
-        public static final int fire=0x7f060013;
-        public static final int info_text=0x7f060011;
-        public static final int nap_length=0x7f060009;
-        public static final int no=0x7f06001c;
-        public static final int none=0x7f060016;
-        public static final int ocean=0x7f060012;
-        public static final int power_nap=0x7f060003;
-        public static final int question_text=0x7f060019;
-        public static final int sleep_time=0x7f060007;
-        public static final int stop=0x7f060018;
-        public static final int submit=0x7f06001a;
-        public static final int ten=0x7f06000a;
-        public static final int thunder=0x7f060014;
-        public static final int timed_nap=0x7f060004;
-        public static final int tip=0x7f06001d;
-        public static final int tip1=0x7f06001e;
-        public static final int tip2=0x7f06001f;
-        public static final int tip3=0x7f060020;
-        public static final int title=0x7f060002;
-        public static final int title_activity_nap=0x7f060010;
-        public static final int title_activity_set_up=0x7f060005;
-        public static final int title_activity_wake_up=0x7f060017;
-        public static final int twenty=0x7f06000c;
-        public static final int welcome=0x7f060006;
-        public static final int yes=0x7f06001b;
+        public static final int action_settings=0x7f070001;
+        public static final int alarm=0x7f070026;
+        public static final int alarm_info=0x7f070027;
+        public static final int alert_name=0x7f07000e;
+        public static final int alert_sound=0x7f07000d;
+        public static final int app_name=0x7f070000;
+        public static final int birds=0x7f070015;
+        public static final int dev=0x7f07000f;
+        public static final int done=0x7f070008;
+        public static final int end_nap=0x7f070021;
+        public static final int fifteen=0x7f07000b;
+        public static final int fire=0x7f070013;
+        public static final int gen=0x7f070023;
+        public static final int info_text=0x7f070011;
+        public static final int nap_info=0x7f070025;
+        public static final int nap_length=0x7f070009;
+        public static final int nap_time=0x7f070024;
+        public static final int no=0x7f07001c;
+        public static final int none=0x7f070016;
+        public static final int ocean=0x7f070012;
+        public static final int power_nap=0x7f070003;
+        public static final int question_text=0x7f070019;
+        public static final int sleep_time=0x7f070007;
+        public static final int stop=0x7f070018;
+        public static final int submit=0x7f07001a;
+        public static final int ten=0x7f07000a;
+        public static final int thunder=0x7f070014;
+        public static final int timed_nap=0x7f070004;
+        public static final int tip=0x7f07001d;
+        public static final int tip1=0x7f07001e;
+        public static final int tip2=0x7f07001f;
+        public static final int tip3=0x7f070020;
+        public static final int title=0x7f070002;
+        public static final int title_activity_nap=0x7f070010;
+        public static final int title_activity_set_up=0x7f070005;
+        public static final int title_activity_settings=0x7f070022;
+        public static final int title_activity_wake_up=0x7f070017;
+        public static final int twenty=0x7f07000c;
+        public static final int welcome=0x7f070006;
+        public static final int yes=0x7f07001b;
     }
     public static final class style {
         /** 
@@ -148,10 +158,14 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f090000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f090001;
+    }
+    public static final class xml {
+        public static final int pref_general=0x7f040000;
+        public static final int pref_headers=0x7f040001;
     }
 }
