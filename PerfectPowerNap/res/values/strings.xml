@@ -34,4 +34,5 @@
 	<string name="tip1">#1 Drink caffine right before your nap</string>
 	<string name="tip2">#2 Find a quiet spot for your nap</string>
 	<string name="tip3">#3 Get up as soon as the alarm goes off</string>
+	<string name="end_nap">Cancel Nap</string>
 </resources>

@@ -118,6 +118,15 @@
        
 	    
 	</LinearLayout>
+	
+    <Button
+        android:id="@+id/endNap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/end_nap"
+        android:textSize="20sp"
+        android:visibility="invisible"/>
     
 
 </RelativeLayout>

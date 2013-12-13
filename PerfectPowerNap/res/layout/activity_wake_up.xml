@@ -8,15 +8,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#ABCDEF"
     tools:context=".WakeUp" >
+	
+    
 
-    <Button
+    <ImageButton
         android:id="@+id/stop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FF0000"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:text="@string/stop"/>
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/stop"/>
+    
     <RelativeLayout
         android:id="@+id/background"
         android:layout_width="match_parent"

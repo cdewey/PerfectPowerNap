@@ -1,30 +1,29 @@
 package com.cse3345.f13.dewey;
 
-import java.util.ArrayList;
-
-
-
 import android.app.Activity;
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.CheckBox;
-import android.widget.ListView;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.RelativeLayout;
 
 public class Nap extends Activity {
 	MediaPlayer mediaPlayer = new MediaPlayer();
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {		
+		
 		super.onCreate(savedInstanceState);
+		
+		SharedPreferences settings = getSharedPreferences("powerNapSettings", 0); //load the preferences
+		SharedPreferences.Editor edit = settings.edit();
+	    edit.putBoolean("napStarted", true);
+	    edit.commit(); //apply
+	    
 		setContentView(R.layout.activity_nap);
+		
 		
 		RadioGroup radioGroup = (RadioGroup) findViewById(R.id.soundChoice);        
 	    radioGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() 
@@ -80,7 +79,20 @@ public class Nap extends Activity {
 	    	   mediaPlayer.pause();
 	       }
 	       super.onPause();
-	       finish();
+	       //finish();
+	   }
+	@Override
+	   public void onResume() {
+			SharedPreferences settings = getSharedPreferences("powerNapSettings", 0); //load the preferences
+		    boolean finished = settings.getBoolean("alramFinished", false);
+		    if(finished == true){
+		    	finish();
+		    }
+		    
+	       if (mediaPlayer != null){
+	    	   mediaPlayer.start();
+	       }
+	       super.onResume();
 	   }
 	@Override
 	   public void onDestroy() {

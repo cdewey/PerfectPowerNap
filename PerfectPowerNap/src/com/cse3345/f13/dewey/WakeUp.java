@@ -9,24 +9,21 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
 public class WakeUp extends Activity {
 	 MediaPlayer mediaPlayer = new MediaPlayer();
-	 String typeNap;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_wake_up);
-		
-		Intent intent = getIntent();
-		typeNap = intent.getStringExtra("type");
-		 
+	    
 		startAlarm();
 		
-		Button stopButton = (Button) findViewById(R.id.stop);
+		ImageButton stopButton = (ImageButton) findViewById(R.id.stop);
 		stopButton.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
             	v.setVisibility(v.INVISIBLE);
@@ -52,13 +49,13 @@ public class WakeUp extends Activity {
 	
 	public void endAlarm(){
 		mediaPlayer.stop();
-		if(typeNap == "power"){
-			RelativeLayout info = (RelativeLayout) findViewById(R.id.background);
-			info.setVisibility(info.VISIBLE);
-		}
-		else{
-			finish();
-		}
+		RelativeLayout info = (RelativeLayout) findViewById(R.id.background);
+		info.setVisibility(info.VISIBLE);
+		
+		SharedPreferences settings = getSharedPreferences("powerNapSettings", 0); //load the preferences
+		SharedPreferences.Editor edit = settings.edit();
+	    edit.putBoolean("alramFinished", true);
+	    edit.commit(); //apply
 	}
 	
 	public void startAlarm(){

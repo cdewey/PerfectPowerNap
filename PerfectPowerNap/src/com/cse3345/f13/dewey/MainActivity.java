@@ -24,7 +24,6 @@ public class MainActivity extends Activity {
     BroadcastReceiver br;
     PowerManager pm;
     WakeLock wl;
-    String typeNap;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,6 +53,13 @@ public class MainActivity extends Activity {
             }
         });
 		
+		Button endNap = (Button) findViewById(R.id.endNap);
+		endNap.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                endNap();
+            }
+        });
+		
 		NumberPicker np = (NumberPicker) findViewById(R.id.sleepTimePicker);
 		np.setMaxValue(60);
 		np.setMinValue(1);
@@ -67,16 +73,20 @@ public class MainActivity extends Activity {
 	}
 	
 	public void nap(String type){
+		
+		SharedPreferences settings = getSharedPreferences("powerNapSettings", 0); //load the preferences
+		SharedPreferences.Editor edit = settings.edit();
+	    edit.putBoolean("alramFinished", false);
+	    edit.commit(); //apply
+	    
 		am = (AlarmManager)(this.getSystemService( Context.ALARM_SERVICE ));
 		
 		if(type == "power"){
-			typeNap = type;
 			long alarmLengthMin = calculateAlarmLength();
 			am.set( AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + 10000, pi );
 		}
 		
 		else{
-			typeNap = type;
 			NumberPicker np = (NumberPicker) findViewById(R.id.sleepTimePicker);
 			long fallAsleepTime = np.getValue();
 			am.set( AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + fallAsleepTime*60000, pi );
@@ -117,20 +127,56 @@ public class MainActivity extends Activity {
 	      pi = PendingIntent.getBroadcast(this, 0, intent,0 );
 	      am = (AlarmManager)(this.getSystemService( Context.ALARM_SERVICE ));
 	      pm = (PowerManager) getSystemService(POWER_SERVICE);
-	      wl = pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "FlashActivity");
+	      wl = pm.newWakeLock((PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.FULL_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP), "FlashActivity");
 	}
 
 	
 	public void openAlarmScreen(){
 		 Intent intent = new Intent(this,WakeUp.class);
-		 intent.putExtra("type", typeNap);
 		 startActivity(intent);
 	}
 	
+	public void endNap(){
+		SharedPreferences settings = getSharedPreferences("powerNapSettings", 0);
+		SharedPreferences.Editor edit = settings.edit();
+	    edit.putBoolean("alramFinished", false);
+	    edit.putBoolean("napStarted", false);
+	    edit.commit(); //apply
+		
+		Context context = getApplicationContext();
+		CharSequence napStart = "Nap Ended";
+		int duration = Toast.LENGTH_SHORT;
+		Toast toast = Toast.makeText(context, napStart, duration);
+		toast.show();
+		
+		
+		Button powerNapButton = (Button) findViewById(R.id.powerNapButton);
+    	Button timedNapButton = (Button) findViewById(R.id.timedNapButton);
+    	Button endNap = (Button) findViewById(R.id.endNap);
+    	powerNapButton.setEnabled(true);
+    	timedNapButton.setEnabled(true);
+    	endNap.setVisibility(endNap.INVISIBLE);
+	}
+	@Override
+	   public void onResume() {
+			SharedPreferences settings = getSharedPreferences("powerNapSettings", 0); //load the preferences
+		    boolean nap = settings.getBoolean("napStarted", false);
+		    if(nap == true){
+		    	Button powerNapButton = (Button) findViewById(R.id.powerNapButton);
+		    	Button timedNapButton = (Button) findViewById(R.id.timedNapButton);
+		    	Button endNap = (Button) findViewById(R.id.endNap);
+		    	powerNapButton.setEnabled(false);
+		    	timedNapButton.setEnabled(false);
+		    	endNap.setVisibility(endNap.VISIBLE);
+		    }
+
+	       super.onResume();
+	   }
 	@Override
 	protected void onDestroy() {
 	       am.cancel(pi);
 	       unregisterReceiver(br);
+	       wl.release();
 	       super.onDestroy();
 	}
 }
